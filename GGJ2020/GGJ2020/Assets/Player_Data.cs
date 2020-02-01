@@ -32,6 +32,7 @@ public class Player_Data
         FALL,
         FALL_LEFT,
         FALL_RIGHT,
+        DOUBLE_JUMP,
     }
 
     public enum GROUND_STATE

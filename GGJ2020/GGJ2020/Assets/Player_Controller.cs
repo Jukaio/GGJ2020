@@ -16,8 +16,10 @@ public class Player_Controller : MonoBehaviour
     Vector2 last_Velocity_ = new Vector2();
     Animator animator_;
     SpriteRenderer renderer_;
-    float jump_Cooldown_ = 0.0f;
+
     float drop_Cooldown_ = 0.0f;
+    public bool double_Jump_ = false;
+    public bool prev_Jump = false;
 
     public Collider2D collider_;
 
@@ -67,15 +69,12 @@ public class Player_Controller : MonoBehaviour
 
         last_Velocity_ = current_Velocity_;
 
-        if (jump_Cooldown_ > 0)
-            jump_Cooldown_ -= Time.fixedDeltaTime;
-        else if (jump_Cooldown_ < 0)
-            jump_Cooldown_ = 0;
-
         if (drop_Cooldown_ > 0)
             drop_Cooldown_ -= Time.fixedDeltaTime;
         else if (drop_Cooldown_ < 0)
             drop_Cooldown_ = 0;
+
+        prev_Jump = Input.GetKey(jump_);
     }
 
     void Decide()
@@ -83,6 +82,13 @@ public class Player_Controller : MonoBehaviour
         switch (current_Area_State_)
         {
             case AREA_STATE.AIR:
+
+                if (Input.GetKey(jump_) && double_Jump_ == false && prev_Jump == false)
+                {
+                    current_Air_State_ = AIR_STATE.DOUBLE_JUMP;
+                    return;
+                }
+
                 if (last_Velocity_.y > 0)
                 {
                     if (Input.GetKey(move_Left_) ^ Input.GetKey(move_Right_)) // Move left or right but not jump
@@ -121,11 +127,12 @@ public class Player_Controller : MonoBehaviour
                         current_Air_State_ = AIR_STATE.FALL;
                     }
                 }
+
                 return;
 
             case AREA_STATE.GROUND:
 
-                if (Input.GetKey(jump_) && jump_Cooldown_ == 0)
+                if (Input.GetKey(jump_) && prev_Jump == false)
                 {
                     if (Input.GetKey(move_Left_) ^ Input.GetKey(move_Right_))
                     {
@@ -234,6 +241,10 @@ public class Player_Controller : MonoBehaviour
                         renderer_.flipX = true;
                         animator_.Play("idle");
                         Move_Right_Air();
+                        break;
+
+                    case AIR_STATE.DOUBLE_JUMP:
+                        Double_Jump_Enter();
                         break;
                 }
                 break;
@@ -350,7 +361,17 @@ public class Player_Controller : MonoBehaviour
     {
         current_Area_State_ = AREA_STATE.AIR;
         rigid_Body_.AddForce(Vector2.up * 100.0f * jump_Height_);
-        jump_Cooldown_ = 0.5f;
+    }
+
+    void Double_Jump_Enter()
+    {
+
+        current_Velocity_.y = 0;
+        rigid_Body_.velocity = current_Velocity_;
+
+
+        rigid_Body_.AddForce(Vector2.up * (100.0f * jump_Height_ * 0.75f));
+        double_Jump_ = true;
     }
 
     void Drop_Enter()
@@ -372,6 +393,11 @@ public class Player_Controller : MonoBehaviour
             current_Level_ = LEVEL.ELSE;
 
 
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        double_Jump_ = false;
     }
 
     private void OnCollisionExit2D(Collision2D collision)

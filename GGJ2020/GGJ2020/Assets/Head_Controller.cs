@@ -14,6 +14,7 @@ public class Head_Controller : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+
         collision.transform.parent.GetComponent<Collider2D>().enabled = false;
     }
 
