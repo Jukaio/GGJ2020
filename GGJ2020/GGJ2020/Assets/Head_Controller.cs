@@ -20,6 +20,15 @@ public class Head_Controller : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
+        StartCoroutine(Wait_For(collision, 0));
+    }
+
+    int i;
+    IEnumerator Wait_For(Collider2D collision, int skip_Frames)
+    {
+        for (i = 0; i < skip_Frames; i++)
+            yield return new WaitForEndOfFrame();
         collision.transform.parent.GetComponent<Collider2D>().enabled = true;
     }
 }
+

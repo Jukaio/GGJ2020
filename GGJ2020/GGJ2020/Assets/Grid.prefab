@@ -164,6 +164,87 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &832647630
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 832647631}
+  m_Layer: 0
+  m_Name: Fourth Edge from Left Zero
+  m_TagString: BLOCK
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &832647631
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 832647630}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4, y: -4, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1951484113}
+  m_Father: {fileID: 4340641624637931106}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1036898309
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1036898310}
+  - component: {fileID: 1036898311}
+  m_Layer: 0
+  m_Name: First Edge
+  m_TagString: BLOCK
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1036898310
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1036898309}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1375712628}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!68 &1036898311
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1036898309}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.1, y: -0.1}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: 0, y: -3.9}
+  - {x: 0, y: 0.4}
+  - {x: 0.1, y: 0.5}
 --- !u!1 &1232345358
 GameObject:
   m_ObjectHideFlags: 0
@@ -194,6 +275,118 @@ Transform:
   - {fileID: 492820606}
   m_Father: {fileID: 1826291932}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1375712627
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1375712628}
+  m_Layer: 0
+  m_Name: Third Edge from Left Zero
+  m_TagString: BLOCK
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1375712628
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1375712627}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.4, y: -4, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1036898310}
+  m_Father: {fileID: 4340641624637931106}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1637702855
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1637702856}
+  - component: {fileID: 1637702857}
+  m_Layer: 0
+  m_Name: First Edge
+  m_TagString: BLOCK
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1637702856
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1637702855}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1645518953}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!68 &1637702857
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1637702855}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.1, y: -0.1}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: 0, y: -1.5}
+  - {x: 0, y: 0.4}
+  - {x: -0.1, y: 0.5}
+--- !u!1 &1645518952
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1645518953}
+  m_Layer: 0
+  m_Name: Second Edge from Left Zero
+  m_TagString: BLOCK
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1645518953
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1645518952}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -11.2, y: -6.4, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1637702856}
+  m_Father: {fileID: 4340641624637931106}
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1826291931
 GameObject:
@@ -258,6 +451,56 @@ Transform:
   m_Father: {fileID: 1826291932}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1951484112
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1951484113}
+  - component: {fileID: 1951484114}
+  m_Layer: 0
+  m_Name: First Edge
+  m_TagString: BLOCK
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1951484113
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1951484112}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 832647631}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!68 &1951484114
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1951484112}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.1, y: -0.1}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: 0, y: -3.9}
+  - {x: 0, y: 0.4}
+  - {x: -0.1, y: 0.5}
 --- !u!1 &4340641623208033043
 GameObject:
   m_ObjectHideFlags: 0
@@ -268,8 +511,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4340641623208033042}
   m_Layer: 0
-  m_Name: 'Right Zero Ground '
-  m_TagString: Untagged
+  m_Name: Right Zero Ground
+  m_TagString: BLOCK
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -624,7 +867,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4340641623712038378}
-  - component: {fileID: 4340641623712038389}
+  - component: {fileID: 1570041946}
   m_Layer: 0
   m_Name: First Edge
   m_TagString: BLOCK
@@ -646,7 +889,7 @@ Transform:
   m_Father: {fileID: 4340641623208033042}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!68 &4340641623712038389
+--- !u!68 &1570041946
 EdgeCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -659,11 +902,12 @@ EdgeCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.1, y: -0.1}
   m_EdgeRadius: 0
   m_Points:
-  - {x: 0, y: 0}
+  - {x: 0, y: -11.9}
   - {x: 0, y: 0.4}
+  - {x: 0.1, y: 0.5}
 --- !u!1 &4340641623783744769
 GameObject:
   m_ObjectHideFlags: 0
@@ -4463,7 +4707,7 @@ GameObject:
   - component: {fileID: 4340641624007051913}
   m_Layer: 0
   m_Name: Left Zero Ground
-  m_TagString: Untagged
+  m_TagString: BLOCK
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4748,6 +4992,9 @@ Transform:
   - {fileID: 4340641625227260639}
   - {fileID: 4340641624007051913}
   - {fileID: 4340641623208033042}
+  - {fileID: 1645518953}
+  - {fileID: 1375712628}
+  - {fileID: 832647631}
   m_Father: {fileID: 4340641624176503767}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5905,11 +6152,12 @@ EdgeCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.1, y: -0.1}
   m_EdgeRadius: 0
   m_Points:
-  - {x: 0, y: 0}
+  - {x: 0, y: -4.7}
   - {x: 0, y: 0.4}
+  - {x: -0.1, y: 0.5}
 --- !u!1 &4340641625027859591
 GameObject:
   m_ObjectHideFlags: 0
@@ -6034,7 +6282,7 @@ GameObject:
   - component: {fileID: 4340641625227260639}
   m_Layer: 0
   m_Name: Screen
-  m_TagString: Untagged
+  m_TagString: BLOCK
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6804,6 +7052,16 @@ CompositeCollider2D:
         Y: -40000000
       - X: 64000000
         Y: -40000000
+    - - X: 95999992
+        Y: -31999998
+      - X: 88000000
+        Y: -31999998
+      - X: 88000000
+        Y: -39000000
+      - X: 89000000
+        Y: -40000000
+      - X: 95999992
+        Y: -40000000
     - - X: 104000000
         Y: -39000000
       - X: 104000000
@@ -6816,38 +7074,6 @@ CompositeCollider2D:
         Y: -40000000
       - X: 101000000
         Y: -40000000
-    - - X: 95999992
-        Y: -31999998
-      - X: 88000000
-        Y: -31999998
-      - X: 88000000
-        Y: -39000000
-      - X: 89000000
-        Y: -40000000
-      - X: 95999992
-        Y: -40000000
-    - - X: 104000000
-        Y: -63000000
-      - X: 104000000
-        Y: -56000000
-      - X: 96000000
-        Y: -56000000
-      - X: 96000000
-        Y: -63000000
-      - X: 97000000
-        Y: -64000000
-      - X: 101000000
-        Y: -64000000
-    - - X: 95999992
-        Y: -56000000
-      - X: 88000000
-        Y: -56000000
-      - X: 88000000
-        Y: -63000000
-      - X: 89000000
-        Y: -64000000
-      - X: 95999992
-        Y: -64000000
     - - X: 64000000
         Y: -63000000
       - X: 66000004
@@ -6875,6 +7101,28 @@ CompositeCollider2D:
       - X: 57000000
         Y: -64000000
       - X: 64000000
+        Y: -64000000
+    - - X: 95999992
+        Y: -56000000
+      - X: 88000000
+        Y: -56000000
+      - X: 88000000
+        Y: -63000000
+      - X: 89000000
+        Y: -64000000
+      - X: 95999992
+        Y: -64000000
+    - - X: 104000000
+        Y: -63000000
+      - X: 104000000
+        Y: -56000000
+      - X: 96000000
+        Y: -56000000
+      - X: 96000000
+        Y: -63000000
+      - X: 97000000
+        Y: -64000000
+      - X: 101000000
         Y: -64000000
   m_CompositePaths:
     m_Paths:

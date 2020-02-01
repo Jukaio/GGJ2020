@@ -17,6 +17,15 @@ public class Player_Controller : MonoBehaviour
     Animator animator_;
     SpriteRenderer renderer_;
 
+    AudioSource audio_Source_;
+    AudioSource audio_Source_Land_;
+    AudioSource audio_Source_Jump_;
+
+    public AudioClip land_Sound_;
+    public AudioClip jump_Sound_;
+    public AudioClip double_Jump_Sound_;
+    public float land_Sound_Cooldown_ = 0.0f;
+
     float drop_Cooldown_ = 0.0f;
     public bool double_Jump_ = false;
     public bool prev_Jump = false;
@@ -53,6 +62,9 @@ public class Player_Controller : MonoBehaviour
         collider_ = (Collider2D)GetComponent(typeof(Collider2D));
         animator_ = (Animator)GetComponent(typeof(Animator));
         renderer_ = (SpriteRenderer)GetComponent(typeof(SpriteRenderer));
+        audio_Source_ = (AudioSource)GetComponent(typeof(AudioSource));
+        audio_Source_Land_ = (AudioSource) gameObject.AddComponent(typeof(AudioSource));
+        audio_Source_Jump_ = (AudioSource)gameObject.AddComponent(typeof(AudioSource));
     }
 
     void FixedUpdate()
@@ -74,6 +86,10 @@ public class Player_Controller : MonoBehaviour
         else if (drop_Cooldown_ < 0)
             drop_Cooldown_ = 0;
 
+        if (land_Sound_Cooldown_ > 0)
+            land_Sound_Cooldown_ -= Time.fixedDeltaTime;
+        else if (land_Sound_Cooldown_ < 0)
+            land_Sound_Cooldown_ = 0;
         prev_Jump = Input.GetKey(jump_);
     }
 
@@ -361,6 +377,11 @@ public class Player_Controller : MonoBehaviour
     {
         current_Area_State_ = AREA_STATE.AIR;
         rigid_Body_.AddForce(Vector2.up * 100.0f * jump_Height_);
+        audio_Source_Jump_.clip = jump_Sound_;
+        audio_Source_Jump_.Play();
+        //audio_Source_.clip = double_Jump_Sound_;
+        //audio_Source_.Play();
+
     }
 
     void Double_Jump_Enter()
@@ -369,9 +390,11 @@ public class Player_Controller : MonoBehaviour
         current_Velocity_.y = 0;
         rigid_Body_.velocity = current_Velocity_;
 
-
         rigid_Body_.AddForce(Vector2.up * (100.0f * jump_Height_ * 0.75f));
         double_Jump_ = true;
+
+        audio_Source_.clip = double_Jump_Sound_;
+        audio_Source_.Play();
     }
 
     void Drop_Enter()
@@ -383,7 +406,9 @@ public class Player_Controller : MonoBehaviour
     private void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.collider.tag != "BLOCK")
+        {
             current_Area_State_ = AREA_STATE.GROUND;
+        }
 
         if (collision.collider.tag == "ZERO")
             current_Level_ = LEVEL.ZERO;
@@ -397,7 +422,25 @@ public class Player_Controller : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        double_Jump_ = false;
+        if (collision.collider.tag != "BLOCK")
+        {
+            double_Jump_ = false;
+            if (land_Sound_Cooldown_ == 0)
+            {
+                land_Sound_Cooldown_ = 0.5f;
+
+                StartCoroutine(Wait_For(audio_Source_Land_, 2));
+            }
+        }
+    }
+
+    int i;
+    IEnumerator Wait_For(AudioSource source, int skip_Frames)
+    {
+        for (i = 0; i < skip_Frames; i++)
+            yield return new WaitForEndOfFrame();
+        source.clip = land_Sound_;
+        source.Play();
     }
 
     private void OnCollisionExit2D(Collision2D collision)
