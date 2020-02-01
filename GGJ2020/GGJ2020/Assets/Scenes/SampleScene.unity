@@ -2553,6 +2553,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4340641624236478608, guid: 2c76c59198032ac4ca28ff075b59a0db,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 7.2
+      objectReference: {fileID: 0}
     - target: {fileID: 4340641624639132818, guid: 2c76c59198032ac4ca28ff075b59a0db,
         type: 3}
       propertyPath: m_ColliderPaths.Array.data[0].m_ColliderPaths.Array.size
@@ -2917,6 +2922,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_CompositePaths.m_Paths.Array.data[4].Array.data[3].y
       value: -7.9999995
+      objectReference: {fileID: 0}
+    - target: {fileID: 4340641624904793020, guid: 2c76c59198032ac4ca28ff075b59a0db,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4340641625038580783, guid: 2c76c59198032ac4ca28ff075b59a0db,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 7.2
       objectReference: {fileID: 0}
     - target: {fileID: 4340641625284921839, guid: 2c76c59198032ac4ca28ff075b59a0db,
         type: 3}
