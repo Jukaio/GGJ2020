@@ -1,11 +1,12 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - Ease_Into_Scene
     - Gadget_Controller
     - Head_Controller
     - Player_Controller
+    - Vicotry_Screen
     Unity.2D.Tilemap.Editor.dll:
-    - UnityEditor.Tilemaps.GridBrush
     - UnityEditor.Tilemaps.GridPaintingState
     - UnityEditor.Tilemaps.GridPaletteBrushes
     - UnityEditor.Tilemaps.GridPalettes
@@ -16,13 +17,21 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
     - UnityEditor.TestTools.TestRunner.TestRun.TestJobDataHolder
+    UnityEngine.UI.dll:
+    - UnityEngine.EventSystems.EventSystem
+    - UnityEngine.EventSystems.StandaloneInputModule
+    - UnityEngine.UI.CanvasScaler
+    - UnityEngine.UI.GraphicRaycaster
+    - UnityEngine.UI.Image
   sceneClasses:
     Assets/Scenes/SampleScene.unity:
     - Class: 1
@@ -66,11 +75,23 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 570}
     - Class: 114
+      Script: {instanceID: 11150}
+    - Class: 114
       Script: {instanceID: 11202}
+    - Class: 114
+      Script: {instanceID: 11364}
+    - Class: 114
+      Script: {instanceID: 11790}
     - Class: 114
       Script: {instanceID: 11908}
     - Class: 114
+      Script: {instanceID: 12714}
+    - Class: 114
       Script: {instanceID: 13050}
+    - Class: 114
+      Script: {instanceID: 13104}
+    - Class: 114
+      Script: {instanceID: 16894}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -81,6 +102,12 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 213
       Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
     - Class: 19719996
       Script: {instanceID: 0}
     - Class: 156049354
@@ -88,6 +115,57 @@ ScriptsOnlyBuild:
     - Class: 483693784
       Script: {instanceID: 0}
     - Class: 1839735485
+      Script: {instanceID: 0}
+    Assets/Scenes/Start.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 11150}
+    - Class: 114
+      Script: {instanceID: 11364}
+    - Class: 114
+      Script: {instanceID: 11790}
+    - Class: 114
+      Script: {instanceID: 12714}
+    - Class: 114
+      Script: {instanceID: 13104}
+    - Class: 114
+      Script: {instanceID: 15248}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 212
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
       Script: {instanceID: 0}
   scriptHashData:
   - hash:
@@ -552,7 +630,20 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 1b06f8afd74c286d32345214ac54dc60
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Vicotry_Screen
+  - hash:
+      serializedVersion: 2
+      Hash: 6d6a38d22adcbc7de92f25247ff83a3b
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Ease_Into_Scene
   platform: 19
   scenePathNames:
+  - Assets/Scenes/Start.unity
   - Assets/Scenes/SampleScene.unity
   playerPath: E:/repos/games/GGJ2020/GGJ2020/Build/GGJ2020.exe

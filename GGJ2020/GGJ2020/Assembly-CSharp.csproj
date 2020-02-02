@@ -63,12 +63,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Ease_Into_Scene.cs" />
     <Compile Include="Assets\Follow_Brother.cs" />
     <Compile Include="Assets\Gadget_Controller.cs" />
     <Compile Include="Assets\Head_Controller.cs" />
     <Compile Include="Assets\Player_Collider.cs" />
     <Compile Include="Assets\Player_Controller.cs" />
     <Compile Include="Assets\Player_Data.cs" />
+    <Compile Include="Assets\Vicotry_Screen.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>E:/repos/games/GGJ2020/GGJ2020/GGJ2020/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
