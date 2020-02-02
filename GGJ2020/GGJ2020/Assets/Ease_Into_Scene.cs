@@ -10,7 +10,6 @@ public class Ease_Into_Scene : MonoBehaviour
     public AudioClip clip_;
 
     public Image image_;
-    public GameObject game_Object_;
     public float t_ = 1.0f;
     public float dt_;
 
@@ -44,8 +43,11 @@ public class Ease_Into_Scene : MonoBehaviour
             if (t_ < 0.0f)
             {
                 audio_Source_.clip = clip_;
-                audio_Source_.pitch = 1.05f;
+                audio_Source_.pitch = 1.00f;
+                audio_Source_.volume = 0.228f;
                 audio_Source_.PlayDelayed(0.2f);
+                if(SceneManager.GetActiveScene().buildIndex == 2)
+                    audio_Source_.loop = true;
                 Time.timeScale = 1.0f;
                 this.enabled = false;
             }
@@ -53,7 +55,6 @@ public class Ease_Into_Scene : MonoBehaviour
             now_ = Time.realtimeSinceStartup;
             dt_ = now_ - last_;
 
-            print(dt_);
             black_.a = (float)EaseInCubic(t_);
             image_.color = black_;
 
