@@ -67,7 +67,7 @@ public class Tree_Controller : MonoBehaviour
     {
         if (burning_)
         {
-            current_Fire_Health_ -= 1.0f;
+            current_Fire_Health_ -= 1.0f * Time.deltaTime * 50.0f;
 
             if (current_Fire_Health_ < max_Fire_Health_ * 0.0f)
             {

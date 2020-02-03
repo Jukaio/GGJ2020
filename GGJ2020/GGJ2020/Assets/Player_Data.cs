@@ -20,7 +20,8 @@ public class Player_Data
     public enum AREA_STATE
     {
         AIR,
-        GROUND
+        GROUND,
+        DEATH
     }
 
     public enum AIR_STATE
@@ -46,6 +47,7 @@ public class Player_Data
         JUMP_RIGHT_ENTER,
         DROP_ENTER,
         DROP_ENTER_LEFT,
-        DROP_ENTER_RIGHT
+        DROP_ENTER_RIGHT,
+        DEATH,
     }
 }

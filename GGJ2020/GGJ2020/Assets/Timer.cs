@@ -6,8 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
-    AudioSource source_;
-    public AudioClip yamete_;
     public Image image_;
     float ease_;
     public Image timer;
@@ -24,10 +22,6 @@ public class Timer : MonoBehaviour
 
     void Awake()
     {
-        source_ = gameObject.AddComponent<AudioSource>();
-        source_.volume = 0.8f;
-        source_.playOnAwake = false;
-        source_.clip = yamete_;
         color_ = new Color(0.0f, 0.0f, 0.0f, 0.0f);
     }
 
@@ -57,7 +51,6 @@ public class Timer : MonoBehaviour
             {
                 if (once_ == false)
                 {
-                    source_.Play();
                     once_ = true;
                 }
 
@@ -76,6 +69,11 @@ public class Timer : MonoBehaviour
             seconds -= Time.deltaTime;
             timer.fillAmount = seconds / 20;
         }
+    }
+
+    public static void lose_Screen()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
     }
 
     public double EaseInCubic(double t)

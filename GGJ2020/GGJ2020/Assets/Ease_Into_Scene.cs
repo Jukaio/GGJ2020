@@ -23,7 +23,6 @@ public class Ease_Into_Scene : MonoBehaviour
     void Awake()
     {
         audio_Source_ = (AudioSource)gameObject.AddComponent(typeof(AudioSource));
-
         Time.timeScale = 0.0f;
         last_ = now_;
         now_ = Time.realtimeSinceStartup;
@@ -31,7 +30,7 @@ public class Ease_Into_Scene : MonoBehaviour
     }
 
     private void Start()
-    { 
+    {
         start_ = true;
     }
 

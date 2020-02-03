@@ -213,7 +213,7 @@ public class Player_Controller : MonoBehaviour
 
     void Act()
     {
-        switch(current_Area_State_)
+        switch (current_Area_State_)
         {
             case AREA_STATE.AIR:
 
@@ -390,7 +390,7 @@ public class Player_Controller : MonoBehaviour
         current_Velocity_.y = 0;
         rigid_Body_.velocity = current_Velocity_;
 
-        rigid_Body_.AddForce(Vector2.up * (100.0f * jump_Height_ * 0.75f));
+        rigid_Body_.AddForce(Vector2.up * (100.0f * jump_Height_ * 0.85f));
         double_Jump_ = true;
 
         audio_Source_.clip = double_Jump_Sound_;
@@ -405,6 +405,13 @@ public class Player_Controller : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
+        if(collision.gameObject.layer == 8 && collision.gameObject.GetComponent<Tree_Controller>().burning_ == true)
+        {
+            current_Ground_State_ = GROUND_STATE.DEATH;
+            current_Area_State_ = AREA_STATE.DEATH;
+            return;
+        }
+
         if (collision.collider.tag != "BLOCK")
         {
             current_Area_State_ = AREA_STATE.GROUND;
@@ -432,7 +439,32 @@ public class Player_Controller : MonoBehaviour
                 StartCoroutine(Wait_For(audio_Source_Land_, 2));
             }
         }
+
+        //if (collision.gameObject.layer == 8 && collision.gameObject.GetComponent<Tree_Controller>().burning_ == true)
+        //{
+        //    current_Ground_State_ = GROUND_STATE.DEATH;
+        //    StartCoroutine(Player_Die());
+        //}
     }
+
+
+    IEnumerator Player_Die()
+    {
+        GameObject death_Object = new GameObject();
+        Animator anim = death_Object.AddComponent<Animator>();
+        anim = animator_;
+
+        anim.Play("Player_Death");
+        jump_Height_ = 0.0f;
+        speed_ = 0.0f;
+        rigid_Body_.bodyType = RigidbodyType2D.Static;
+        this.enabled = false;
+
+        yield return new WaitForSeconds(2.0f);
+
+        Timer.lose_Screen();
+    }
+
 
     int i;
     IEnumerator Wait_For(AudioSource source, int skip_Frames)
